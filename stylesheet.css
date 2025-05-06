@@ -94,7 +94,7 @@ body {
     position: relative;
     width: 100%;
     height: 100vh;
-    background: url('D:/desktop/HTML 1/Personal Website/Sabari Poornesh.png') no-repeat center center;
+    background: url('../Personal Website/Sabari Poornesh.png') no-repeat center center;
     background-size: cover;
     display: flex;
     align-items: center;
