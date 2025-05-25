@@ -1,0 +1,1343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sabari Poornesh S - Portfolio</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    color: #ededed;
+    background: #120829;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 10%;
+    background: #051129;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 25px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    opacity: 0;
+    animation: slideRight 1s ease forwards;
+}
+
+
+.navbar a {
+    display: inline-block;
+    font-size: 18px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 450;
+    margin-left: 40px;
+    transition: .3s;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    box-shadow: 0 0 205px #0d0541;
+    opacity: 0;
+    animation: slideTop .5s ease forwards;
+    animation-delay: calc(.2s * var(--i));
+}
+
+.navbar a:hover {
+    transition: .5s;
+    border-radius: 40px;
+    color: #0ef;
+}
+
+.nav-box {
+    display: inline-block;
+    margin-top: 5px;
+    margin-right: -30px;
+    padding: 2px 28px;
+    background: transparent;
+    border-radius: 40px;
+    font-size: 16px;
+    color: #081b29;
+    letter-spacing: 1px;
+    text-decoration: none;
+    font-weight: 600;
+    opacity: 0;
+    animation: slideTop 1s ease forwards;
+    animation-delay: 2s;
+    box-shadow: 0 0 5px #0ef, 0 0 25px #0ef;
+}
+
+.nav-box:hover {
+    transition: .5s ease;
+    box-shadow: 0 0 5px cyan, 0 0 15px rgb(0, 81, 255), 0 0 20px cyan;
+    color: #081b29;
+}
+
+#menu-icon {
+    display: none;
+    font-size: 30px;
+    color: #0ef;
+    cursor: pointer;
+    z-index: 101;
+}
+
+.home {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: url('https://raw.githubusercontent.com/Sabari425/Portfolio/refs/heads/main/Sabari%20Poornesh.png') no-repeat center center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    padding: 70px 10% 0;
+}
+
+.home-content {
+    max-width: 600px;
+}
+
+.home-content h3 {
+    font-size: 32px;
+    font-weight: 700;
+    opacity: 0;
+    animation: slideBottom 1s ease forwards;
+    animation-delay: .7s;
+}
+
+.home-content h3:nth-of-type(2) {
+    margin-bottom: 30px;
+    animation: slideTop 1s ease forwards;
+    animation-delay: .7s;
+}
+
+.home-content h3 span {
+    color: #0ef;
+}
+
+.home-content h1 {
+    font-size: 56px;
+    font-weight: 700;
+    margin: -3px 0;
+    opacity: 0;
+    animation: slideRight 1s ease forwards;
+    animation-delay: 1s;
+}
+
+.home-content p {
+    font-size: 18px;
+    line-height: 1.6;
+    opacity: 0;
+    animation: slideLeft 1s ease forwards;
+    animation-delay: 1s;
+}
+
+.home-sci a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: 2px solid #0ef;
+    border-radius: 50%;
+    font-size: 20px;
+    color: #0ef;
+    text-decoration: none;
+    margin: 30px 15px 30px 0;
+    transition: .5s ease;
+    opacity: 0;
+    animation: slideLeft 1s ease forwards;
+    animation-delay: calc(.2s * var(--i));
+}
+
+.home-sci a:hover {
+    background: #0ef;
+    color: #081b29;
+    box-shadow: 0 0 20px #0ef;
+}
+
+.btn-box {
+    display: inline-block;
+    padding: 12px 28px;
+    background: #0ef;
+    border-radius: 40px;
+    font-size: 16px;
+    color: #081b29;
+    letter-spacing: 1px;
+    text-decoration: none;
+    font-weight: 600;
+    box-shadow: 0 0 5px #0ef, 0 0 25px #0ef;
+    opacity: 0;
+    animation: slideTop 1s ease forwards;
+    animation-delay: 2s;
+    transition: box-shadow .5s ease;
+}
+
+.btn-box:hover {
+    box-shadow: 0 0 5px cyan, 0 0 25px rgb(0, 81, 255), 0 0 50px cyan, 0 0 100px rgb(0, 247, 255);
+}
+
+.about {
+    padding: 100px 10% 50px;
+    background: #030f2b;
+    color: #f8fafc;
+}
+
+.heading {
+    text-align: center;
+    font-size: 60px;
+    padding-bottom: 70px;
+}
+
+.heading span {
+    color: #0ef;
+}
+
+.about-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.about-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 100px;
+    gap: 40px;
+}
+
+.about-item.reverse {
+    flex-direction: row-reverse;
+}
+
+.about-text {
+    flex: 1;
+    padding: 40px;
+    background: transparent;
+    border-radius: 20px;
+    box-shadow: 0 0 5px #0ef, 0 0 25px #0ef;
+    transition: transform .5s, box-shadow .5s;
+    opacity: 0;
+    animation: slideLeft 1s ease forwards;
+    animation-delay: calc(.2s * var(--i));
+}
+
+.about-text:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 5px cyan, 0 0 25px rgb(0, 81, 255), 0 0 50px cyan, 0 0 100px rgb(0, 247, 255);
+    background: #020816;
+}
+
+.about-text h4 {
+    font-size: 30px;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.about-text p {
+    color: #cbd5e1;
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.about-img {
+    width: 350px;
+    height: auto;
+    border-radius: 10px;
+    margin-left: 90px;
+    margin-right: 50px;
+}
+
+.services {
+    color: #f8fafc;
+    background: #0b011e;
+    padding: 90px 10%;
+}
+
+.sub-title {
+    text-align: center;
+    font-size: 60px;
+    padding-bottom: 70px;
+}
+
+.sub-title span {
+    color: #0ef;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.services-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(259px, 1fr));
+    grid-gap: 50px;
+    margin-top: 50px;
+}
+
+.services-box {
+    background: transparent;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 0 5px #0ef, 0 0 25px #0ef;
+    transition: transform .5s, box-shadow .5s;
+    opacity: 0;
+    animation: slideTop 1s ease forwards;
+    animation-delay: calc(.2s * var(--i));
+}
+
+.services-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 5px cyan, 0 0 25px rgb(0, 81, 255), 0 0 50px cyan, 0 0 100px rgb(0, 247, 255);
+    background: #020816;
+}
+
+.services-box i {
+    font-size: 50px;
+    margin-bottom: 30px;
+}
+
+.services-box h2 {
+    font-size: 30px;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.services-box p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.read {
+    display: inline-block;
+    padding: 12px 40px;
+    background: #0ef;
+    border-radius: 40px;
+    font-size: 16px;
+    color: #081b29;
+    letter-spacing: 1px;
+    text-decoration: none;
+    font-weight: 600;
+    box-shadow: 0 0 5px #0ef, 0 0 25px #0ef;
+    transition: box-shadow .5s;
+}
+
+.read:hover {
+    box-shadow: 0 0 5px cyan, 0 0 25px cyan, 0 0 40px cyan, 0 0 60px rgb(0, 247, 255);
+}
+
+.skills {
+    padding: 90px 10%;
+    background: #020816;
+    color: #f8fafc;
+}
+
+.skills-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding-top: 80px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.technical-skills, .professional-skills {
+    flex: 1;
+    min-width: 300px;
+    padding: 0;
+}
+
+.heading1 {
+    text-align: center;
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 40px;
+    color: #fff;
+}
+
+.Technical-bars .bar {
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.Technical-bars .bar i {
+    font-size: 30px;
+    margin-right: 15px;
+}
+
+.Technical-bars .bar .info {
+    flex: 1;
+}
+
+.Technical-bars .bar .info span {
+    margin-right: 23px;
+    font-size: 17px;
+    font-weight: 500;
+    color: #fff;
+    opacity: 0;
+    animation: showText 0.5s 1s linear forwards;
+}
+
+.Technical-bars .bar .info span:hover {
+    padding-left: 20px;
+    padding-right: 20px;
+    background: transparent;
+    border-radius: 40px 100px 90px 90px;
+    transition: .5s;
+    box-shadow: 0 0 5px cyan, 0 0 25px rgb(0, 81, 255), 0 0 50px cyan, 0 0 100px rgb(0, 247, 255);
+}
+
+.Technical-bars .bar .progress-line {
+    position: relative;
+    width: 100%;
+    height: 8px;
+    background-color: #051227;
+    border-radius: 10px;
+    animation: animate 1s cubic-bezier(1,0,0.5,1) forwards;
+    transform: scaleX(0);
+    transform-origin: left;
+}
+
+@keyframes animate {
+    100% {
+        transform: scaleX(1);
+    }
+}
+
+.Technical-bars .bar .progress-line span {
+    height: 100%;
+    background-color: #0ef;
+    position: absolute;
+    border-radius: 10px;
+    animation: animate 1s 1s cubic-bezier(1,0,0.5,1) forwards;
+    transform: scaleX(0);
+    transform-origin: left;
+}
+
+.progress-line.html span { width: 90%; }
+.progress-line.css span { width: 60%; }
+.progress-line.javascript span { width: 85%; }
+.progress-line.python span { width: 50%; }
+.progress-line.c span { width: 75%; }
+
+.progress-line span::after {
+    content: attr(data-percent);
+    position: absolute;
+    padding: 2px 8px;
+    background-color: #000;
+    color: #fff;
+    font-size: 12px;
+    border-radius: 3px;
+    top: -30px;
+    right: -20px;
+    opacity: 0;
+    animation: showText 0.5s 1s linear forwards;
+}
+
+.progress-line.html span::after { content: "90%"; }
+.progress-line.css span::after { content: "60%"; }
+.progress-line.javascript span::after { content: "85%"; }
+.progress-line.python span::after { content: "50%"; }
+.progress-line.c span::after { content: "75%"; }
+
+.progress-line span::before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    border: 7px solid transparent;
+    border-bottom-width: 0;
+    border-right-width: 0;
+    border-top-color: #000;
+    top: -10px;
+    right: 0;
+    opacity: 0;
+    animation: showText 0.5s 1s linear forwards;
+}
+
+@keyframes showText {
+    100% {
+        opacity: 1;
+    }
+}
+
+.radial-bars {
+    display: grid;
+    grid-template-columns: repeat(2, .4fr);
+    margin-left: 90px;
+    gap: 20px;
+    justify-items: center;
+}
+
+.radial-bar {
+    position: relative;
+    width: 130px;
+    height: 130px;
+}
+
+.radial-bar svg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-90deg);
+    width: 120px;
+    height: 120px;
+}
+
+.radial-bar .progress-bar {
+    stroke-width: 10;
+    stroke: #1e293b;
+    fill: transparent;
+    stroke-dasharray: 502;
+    stroke-dashoffset: 0;
+    stroke-linecap: round;
+}
+
+.radial-bar .path {
+    stroke-width: 10;
+    stroke: #0ef;
+    fill: transparent;
+    stroke-dasharray: 502;
+    stroke-dashoffset: 502;
+    stroke-linecap: round;
+}
+
+.path-1 { animation: animate-path1 1s 1s linear forwards; }
+.path-2 { animation: animate-path2 1s 1s linear forwards; }
+.path-3 { animation: animate-path3 1s 1s linear forwards; }
+.path-4 { animation: animate-path4 1s 1s linear forwards; }
+
+.radial-bar .percentage {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 15px;
+    font-weight: 500;
+    color: #fff;
+    opacity: 0;
+    animation: showText 0.5s 1s linear forwards;
+}
+
+.radial-bar .text {
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 15px;
+    font-weight: 500;
+    color: #fff;
+    text-align: center;
+    width: 100%;
+    opacity: 0;
+    animation: showText 0.5s 1s linear forwards;
+}
+
+.portfolio {
+    padding: 90px 10%;
+    background: #020816;
+    color: #f8fafc;
+}
+
+.portfolio-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 50px;
+    margin-top: 50px;
+}
+
+.row {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    cursor: pointer;
+    opacity: 0;
+    animation: slideTop 1s ease forwards;
+    animation-delay: calc(.2s * var(--i));
+}
+
+.row img {
+    width: 100%;
+    border-radius: 8px;
+    display: block;
+    transition: transform .5s;
+}
+
+.layer {
+    width: 100%;
+    height: 0;
+    color: #011421;
+    background: linear-gradient(rgb(255, 255, 255), #0ef);
+    position: absolute;
+    border-radius: 8px;
+    left: 0;
+    bottom: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0px 25px;
+    transition: height .5s;
+}
+
+.layer h5 {
+    color: #000;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.layer p {
+    color: #000;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.layer i {
+    color: #0000ff;
+    margin-top: 20px;
+    font-size: 20px;
+    background: #02242e;
+    text-decoration: none;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.layer a {
+    text-decoration: none;
+}
+
+.row:hover img {
+    transform: scale(1.1);
+}
+
+.row:hover .layer {
+    height: 100%;
+}
+
+.contact {
+    padding: 90px 10%;
+    background: #0b011e;
+    color: #f8fafc;
+}
+
+.contact-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 50px;
+    margin-top: 50px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.contact-text h4 {
+    font-size: 24px;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 15px;
+}
+
+.contact-text p {
+    color: #cbd5e1;
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.contact-list li {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    color: #cbd5e1;
+    font-size: 16px;
+}
+
+.contact-list a {
+    text-decoration: none;
+}
+
+.contact-list i {
+    color: #0ef;
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+.contact-icons a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: 2px solid #0ef;
+    border-radius: 50%;
+    font-size: 20px;
+    color: #0ef;
+    text-decoration: none;
+    margin: 20px 15px 20px 0;
+    transition: .5s ease;
+    opacity: 0;
+    animation: slideLeft 1s ease forwards;
+    animation-delay: calc(.2s * var(--i));
+}
+
+.contact-icons a:hover {
+    background: #0ef;
+    color: #081b29;
+    box-shadow: 0 0 20px #0ef;
+}
+
+.contact-form form input,
+.contact-form form textarea {
+    width: 100%;
+    padding: 18px;
+    background: #555557;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    border: none;
+    outline: none;
+    border-radius: 8px;
+}
+
+.contact-form form .send {
+    display: inline-block;
+    padding: 14px 60px;
+    background: #0ef;
+    border-radius: 40px;
+    font-size: 18px;
+    color: #081b29;
+    letter-spacing: 1px;
+    text-decoration: none;
+    font-weight: 600;
+    box-shadow: 0 0 5px #0ef, 0 0 25px #0ef;
+    transition: box-shadow .5s;
+    cursor: pointer;
+}
+
+.contact .send:hover {
+    box-shadow: 0 0 5px cyan, 0 0 25px cyan, 0 0 40px cyan, 0 0 60px rgb(0, 247, 255);
+}
+
+.last-text {
+    width: 100%;
+    text-align: center;
+    padding: 25px;
+    background: rgb(7, 85, 91);
+    font-weight: 300;
+    margin-top: 70px;
+}
+
+.top {
+    position: fixed;
+    bottom: 2.1rem;
+    right: 2.1rem;
+    opacity: 0;
+    transition: opacity .3s ease;
+}
+
+.top.show {
+    opacity: 1;
+}
+
+.top i {
+    color: #000;
+    background: #0ef;
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+/* Responsive Design */
+@media (max-width: 1080px) {
+    .header {
+        padding: 15px 5%;
+    }
+    .navbar {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: #051129;
+        flex-direction: column;
+        padding: 20px;
+    }
+    .navbar.active {
+        display: flex;
+    }
+    .navbar a {
+        margin: 10px 0;
+        font-size: 16px;
+    }
+    .nav-box {
+        padding: 8px 20px;
+        font-size: 14px;
+        margin-right: 0;
+    }
+    #menu-icon {
+        display: block;
+    }
+    .home {
+        padding: 60px 5% 0;
+        background-position: center center;
+        background-size: cover;
+    }
+    .home-content {
+        max-width: 100%;
+    }
+    .home-content h1 {
+        font-size: 40px;
+    }
+    .home-content h3 {
+        font-size: 24px;
+    }
+    .home-content p {
+        font-size: 16px;
+    }
+    .about, .services, .skills, .portfolio, .contact {
+        padding: 60px 5%;
+    }
+    .sub-title {
+        font-size: 40px;
+    }
+    .container {
+        padding: 0;
+    }
+    .about-item, .about-item.reverse {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .about-text {
+        margin: 0;
+        padding: 20px;
+    }
+    .about-img {
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto;
+    }
+    .services-list {
+        grid-template-columns: 1fr;
+    }
+    .skills-container {
+        flex-direction: column;
+        gap: 40px;
+    }
+    .radial-bars {
+        grid-template-columns: repeat(2, 1fr);
+        margin-left: 0;
+    }
+    .portfolio-content {
+        grid-template-columns: 1fr;
+    }
+    .contact-content {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 720px) {
+    .home {
+        height: auto;
+        min-height: 100vh;
+        padding-bottom: 40px;
+    }
+    .home-content h1 {
+        font-size: 32px;
+    }
+    .home-content h3 {
+        font-size: 20px;
+    }
+    .home-content p {
+        font-size: 14px;
+    }
+    .home-sci a {
+        width: 35px;
+        height: 35px;
+        font-size: 18px;
+        margin: 20px 10px 20px 0;
+    }
+    .btn-box {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+    .sub-title {
+        font-size: 32px;
+    }
+    .heading {
+        font-size: 40px;
+    }
+    .about-text h4 {
+        font-size: 24px;
+    }
+    .about-text p {
+        font-size: 14px;
+    }
+    .services-box h2 {
+        font-size: 24px;
+    }
+    .services-box p {
+        font-size: 14px;
+    }
+    .read {
+        padding: 10px 30px;
+        font-size: 14px;
+    }
+    .Technical-bars .bar .info span {
+        font-size: 15px;
+    }
+    .Technical-bars .bar i {
+        font-size: 25px;
+    }
+    .radial-bar {
+        width: 100px;
+        height: 100px;
+    }
+    .radial-bar svg {
+        width: 90px;
+        height: 90px;
+    }
+    .radial-bar .percentage, .radial-bar .text {
+        font-size: 12px;
+    }
+    .layer h5 {
+        font-size: 18px;
+    }
+    .layer p {
+        font-size: 14px;
+    }
+    .contact-text h4 {
+        font-size: 18px;
+    }
+    .contact-text p, .contact-list li {
+        font-size: 14px;
+    }
+    .contact-icons a {
+        width: 35px;
+        height: 35px;
+        font-size: 18px;
+    }
+    .contact-form form input,
+    .contact-form form textarea {
+        padding: 14px;
+        font-size: 14px;
+    }
+    .contact-form form .send {
+        padding: 12px 50px;
+        font-size: 16px;
+    }
+}
+
+/* Animations */
+@keyframes slideRight {
+    0% { transform: translateX(-100px); opacity: 0; }
+    100% { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideLeft {
+    0% { transform: translateX(100px); opacity: 0; }
+    100% { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideTop {
+    0% { transform: translateY(100px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes slideBottom {
+    0% { transform: translateY(-100px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes showText {
+    100% { opacity: 1; }
+}
+
+@keyframes animate {
+    100% { transform: scaleX(1); }
+}
+
+@keyframes animate-path1 { 100% { stroke-dashoffset: 50; } }
+@keyframes animate-path2 { 100% { stroke-dashoffset: 175; } }
+@keyframes animate-path3 { 100% { stroke-dashoffset: 125; } }
+@keyframes animate-path4 { 100% { stroke-dashoffset: 75; } }
+    </style>
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+    <script src="https://unpkg.com/typed.js@2.0.15/dist/typed.umd.js"></script>
+</head>
+<body>
+    <header class="header">
+        <a href="#home" class="logo">Portfolio</a>
+        <i class='bx bx-menu' id="menu-icon"></i>
+        <nav class="navbar">
+            <a href="#home" style="--i:1" class="nav-box">Home</a>
+            <a href="#about" style="--i:2" class="nav-box">About</a>
+            <a href="#skills" style="--i:3" class="nav-box">Skills</a>
+            <a href="#portfolio" style="--i:4" class="nav-box">Projects</a>
+            <a href="#services" style="--i:5" class="nav-box">Services</a>
+            <a href="#contact" style="--i:6" class="nav-box">Contact</a>
+        </nav>
+    </header>
+
+    <section class="home" id="home">
+        <div class="home-content">
+            <h3>Hello, It's Me</h3>
+            <h1>Sabari Poornesh S</h1>
+            <h3>And I'm a <span class="text"></span></h3>
+            <p>I'm a passionate web developer and UI/UX designer, dedicated to creating seamless and visually appealing digital experiences. Explore my skills, projects, and services below!</p>
+            <div class="home-sci">
+                <a href="https://www.facebook.com/" style="--i:7"><i class='bx bxl-facebook'></i></a>
+                <a href="https://www.instagram.com/" style="--i:8"><i class='bx bxl-instagram'></i></a>
+                <a href="https://web.whatsapp.com/" style="--i:9"><i class='bx bxl-whatsapp'></i></a>
+                <a href="https://x.com/home" style="--i:10"><i class='bx bxl-twitter'></i></a>
+                <a href="https://www.linkedin.com/in/sabari-poornesh-s425/" style="--i:11"><i class='bx bxl-linkedin'></i></a>
+                <a href="https://github.com/Sabari425" style="--i:12"><i class='bx bxl-github'></i></a>
+            </div>
+            <a href="#about" class="btn-box">More About Me</a>
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <h1 class="heading">About <span>Me</span></h1>
+        <div class="about-content">
+            <div class="about-item">
+                <div class="about-text">
+                    <h4>Full Stack Developer</h4>
+                    <p>I specialize in building responsive and efficient websites using modern technologies like HTML, CSS, JavaScript, and backend frameworks. My focus is on delivering clean code and optimal performance.</p>
+                    <a href="https://www.w3schools.com/whatis/whatis_fullstack.asp" class="btn-box">Learn More</a>
+                </div>
+                <img class="about-img" src="https://raw.githubusercontent.com/Sabari425/Portfolio/refs/heads/main/Programming-amico.png" alt="Full Stack Illustration">
+            </div>
+            <div class="about-item reverse">
+                <div class="about-text">
+                    <h4>UI/UX Designer</h4>
+                    <p>I design intuitive and visually stunning interfaces, ensuring a seamless user experience. My designs incorporate modern trends like parallax scrolling and smooth transitions.</p>
+                    <a href="https://flatironschool.com/blog/what-is-ux-ui-design/" class="btn-box">Learn More</a>
+                </div>
+                <img class="about-img" src="https://raw.githubusercontent.com/Sabari425/Portfolio/refs/heads/main/Code%20typing-amico.png" alt="UI/UX Illustration">
+            </div>
+            <div class="about-item">
+                <div class="about-text">
+                    <h4>Problem Solver</h4>
+                    <p>I thrive on tackling complex challenges, whether it's optimizing single-page applications or debugging intricate systems. My goal is to deliver robust and scalable solutions.</p>
+                    <a href="https://in.indeed.com/career-advice/resumes-cover-letters/problem-solving-skills" class="btn-box">Learn More</a>
+                </div>
+                <img class="about-img" src="https://raw.githubusercontent.com/Sabari425/Portfolio/refs/heads/main/Problem%20solving-rafiki.png" alt="Problem Solving Illustration">
+            </div>
+        </div>
+    </section>
+
+    <section class="services" id="services">
+        <div class="container">
+            <h1 class="sub-title">My <span>Services</span></h1>
+            <div class="services-list">
+                <div class="services-box">
+                    <i class='bx bx-code' style='color: #00eeff'></i>
+                    <h2>Web Development</h2>
+                    <p>I create responsive and interactive websites using HTML, CSS, and JavaScript—perfect for portfolios, dashboards, or custom tools related to robotics and automation.</p>
+                    <a href="https://www.w3schools.com/whatis/" class="read">Learn More</a>
+                </div>
+                <div class="services-box">
+                    <i class='bx bx-crop' style='color: #00eeff'></i>
+                    <h2>UI/UX Design</h2>
+                    <p>I design clean, user-friendly interfaces focused on smooth interaction and usability—ideal for both web apps and robotics control systems. Builting the Web designs</p>
+                    <a href="https://www.geeksforgeeks.org/design-system-for-ui-ux/" class="read">Learn More</a>
+                </div>
+                <div class="services-box">
+                    <i class='bx bxl-apple' style='color: #00eeff'></i>
+                    <h2>App Development</h2>
+                    <p>I build efficient and user-friendly applications using Python and JavaScript, focused on robotics control, automation, and custom tools. </p>
+                    <a href="https://developer.android.com/" class="read">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="skills" id="skills">
+        <h1 class="sub-title">My <span>Skills</span></h1>
+        <div class="skills-container">
+            <div class="technical-skills container">
+                <h1 class="heading1">Technical Skills</h1>
+                <div class="Technical-bars">
+                    <div class="bar"><i style="color: #c95d2e;" class="bx bxl-html5"></i>
+                        <div class="info">
+                            <span>HTML</span>
+                        </div>
+                        <div class="progress-line html">
+                            <span></span>
+                        </div>
+                    </div>
+                    <div class="bar"><i style="color: #147bbc;" class="bx bxl-css3"></i>
+                        <div class="info">
+                            <span>CSS</span>
+                        </div>
+                        <div class="progress-line css">
+                            <span></span>
+                        </div>
+                    </div>
+                    <div class="bar"><i style="color: #b0bc1e;" class="bx bxl-javascript"></i>
+                        <div class="info">
+                            <span>JavaScript</span>
+                        </div>
+                        <div class="progress-line javascript">
+                            <span></span>
+                        </div>
+                    </div>
+                    <div class="bar"><i style="color: #d411ea;" class="bx bxl-python"></i>
+                        <div class="info">
+                            <span>Python</span>
+                        </div>
+                        <div class="progress-line python">
+                            <span></span>
+                        </div>
+                    </div>
+                    <div class="bar"><i style="color: #228585;" class="bx bxl-c-plus-plus"></i>
+                        <div class="info">
+                            <span>C++</span>
+                        </div>
+                        <div class="progress-line c">
+                            <span></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="professional-skills container">
+                <h1 class="heading1">Professional Skills</h1>
+                <div class="radial-bars">
+                    <div class="radial-bar">
+                        <svg x="0px" y="0px" viewBox="0 0 200 200">
+                            <circle class="progress-bar" cx="100" cy="100" r="80"></circle>
+                            <circle class="path path-1" cx="100" cy="100" r="80"></circle>
+                        </svg>
+                        <div class="percentage">90%</div>
+                        <div class="text">Creativity</div>
+                    </div>
+                    <div class="radial-bar">
+                        <svg x="0px" y="0px" viewBox="0 0 200 200">
+                            <circle class="progress-bar" cx="100" cy="100" r="80"></circle>
+                            <circle class="path path-2" cx="100" cy="100" r="80"></circle>
+                        </svg>
+                        <div class="percentage">65%</div>
+                        <div class="text">Communication</div>
+                    </div>
+                    <div class="radial-bar">
+                        <svg x="0px" y="0px" viewBox="0 0 200 200">
+                            <circle class="progress-bar" cx="100" cy="100" r="80"></circle>
+                            <circle class="path path-3" cx="100" cy="100" r="80"></circle>
+                        </svg>
+                        <div class="percentage">80%</div>
+                        <div class="text">Problem Solving</div>
+                    </div>
+                    <div class="radial-bar">
+                        <svg x="0px" y="0px" viewBox="0 0 200 200">
+                            <circle class="progress-bar" cx="100" cy="100" r="80"></circle>
+                            <circle class="path path-4" cx="100" cy="100" r="80"></circle>
+                        </svg>
+                        <div class="percentage">75%</div>
+                        <div class="text">Teamwork</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="portfolio" id="portfolio">
+        <div class="container">
+            <h1 class="sub-title">Latest <span>Projects</span></h1>
+            <div class="portfolio-content">
+                <div class="row">
+                    <img src="https://raw.githubusercontent.com/Sabari425/Portfolio/refs/heads/main/Programming-amico.png" alt="UI/UX Project">
+                    <div style="margin-top: 120px;" class="layer">
+                        <h5>Database Management</h5>
+                        <p>I design, build, and manage databases to store, organize, and retrieve data efficiently. 
+                            From setting up relational databases like MySQL to integrating them with software or robotics 
+                            applications, I ensure data flows smoothly and securely.</p>
+                        <a href="https://www.geeksforgeeks.org/introduction-of-dbms-database-management-system-set-1/"><i class='bx bx-link-external' style="color: aliceblue;"></i></a>
+                    </div>
+                </div>
+                <div class="row">
+                    <img src="https://raw.githubusercontent.com/Sabari425/Portfolio/refs/heads/main/Version%20control-amico.png" alt="Social Media App">
+                    <div class="layer">
+                        <h5>UML Structures</h5>
+                        <p>I create clear and professional UML diagrams like use case, class, sequence, and activity diagrams 
+                            to visually represent software or robotics system architecture. These help in planning, designing, 
+                            and communicating complex systems effectively.</p>
+                        <a href="https://www.geeksforgeeks.org/structural-diagrams-unified-modeling-languageuml/"><i class='bx bx-link-external' style="color: aliceblue;"></i></a>
+                    </div>
+                </div>
+                <div class="row">
+                    <img src="https://raw.githubusercontent.com/Sabari425/Portfolio/refs/heads/main/Video%20game%20developer-amico.png" alt="Chat Bot">
+                    <div class="layer">
+                        <h5>Video Player Interfaces</h5>
+                        <p>I design user-friendly video player interfaces with essential controls like play, pause, volume, 
+                            and seek bars. The interfaces are responsive and visually appealing, ensuring smooth interaction 
+                            across all devices. Ideal for educational content, entertainment, or custom applications.</p>
+                        <a href="file:///C:/Users/donha/Desktop/SP%20System%20Video%20Player.html"><i class='bx bx-link-external' style="color: aliceblue;"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <div class="container">
+            <h1 class="sub-title">Contact <span>Me</span></h1>
+            <div class="contact-content">
+                <div class="contact-text">
+                    <h4>Let's Work Together</h4>
+                    <p>I'm excited to collaborate on your next project. Reach out to discuss your ideas or learn more about my services!</p>
+                    <div class="contact-list">
+                        <a href="https://mail.google.com/mail/u/0/#inbox?compose=new"><li><i class='bx bxs-send'></i>sabaripoorneshs425@gmail.com</li></a>
+                        <a href="#contact"><li><i class='bx bxs-phone'></i>+91 8281936479</li></a>
+                        <a href="https://www.google.com/maps/place/Kozhippara,+Kerala/@10 10.798269,76.837499,13z/data=!4m2!3m1!1s0x3ba8421aa578f91b:0x59e16ed65ee88e1a?entry=ttu&g_ep=EgoyMDI1MDQzMC4xIKXMDSoJLDEwMjExNDU1SAFQAw%3D%3D"><li><i class="bx bx-map"></i><br>MS Nivas, 17/7, Near GHS School, Kozhippara, <br> Palakkad, Kerala</li></a>
+                    </div>
+                    <div class="contact-icons">
+                        <a href="https://www.facebook.com/" style="--i:13"><i class='bx bxl-facebook-circle'></i></a>
+                        <a href="https://x.com/home" style="--i:14"><i class='bx bxl-twitter'></i></a>
+                        <a href="https://www.instagram.com/" style="--i:15"><i class='bx bxl-instagram'></i></a>
+                        <a href="https://www.linkedin.com/in/sabari-poornesh-s425/" style="--i:16"><i class='bx bxl-linkedin'></i></a>
+                        <a href="https://mail.google.com/mail/u/0/#inbox?compose=new" style="--i:17"><i class='bx bxl-gmail'></i></a>
+                        <a href="https://web.whatsapp.com/" style="--i:18"><i class='bx bxl-whatsapp'></i></a>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="contact-form">
+                        <input type="text" name="name" placeholder="Enter Your Name" required>
+                        <input type="email" name="email" placeholder="Enter Your Email" required>
+                        <input type="text" name="subject" placeholder="Enter Your Subject">
+                        <textarea name="message" cols="40" rows="10" placeholder="Enter Your Message" required></textarea>
+                        <input type="submit" value="Submit" class="send">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="last-text">
+        <p>Developed with love by Sabari Poornesh S © 2025</p>
+    </div>
+    <a href="#home" class="top"><i class='bx bx-up-arrow-alt'></i></a>
+
+    <script src="https://unpkg.com/typed.js@2.0.15/dist/typed.umd.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+    // Initialize Typed.js
+    new Typed('.text', {
+        strings: ['Student', 'Frontend Developer', 'Programmer', 'Web Developer'],
+        typeSpeed: 100,
+        backSpeed: 50,
+        backDelay: 2000,
+        loop: true
+    });
+
+    // Hamburger menu toggle
+    const menuIcon = document.getElementById('menu-icon');
+    const navbar = document.querySelector('.navbar');
+
+    menuIcon.addEventListener('click', () => {
+        navbar.classList.toggle('active');
+        menuIcon.classList.toggle('bx-x');
+    });
+
+    // Close menu when a link is clicked
+    document.querySelectorAll('.navbar a').forEach(anchor => {
+        anchor.addEventListener('click', (e) => {
+            e.preventDefault();
+            const targetId = anchor.getAttribute('href').substring(1);
+            const targetElement = document.getElementById(targetId);
+            window.scrollTo({
+                top: targetElement.offsetTop - 80,
+                behavior: 'smooth'
+            });
+            navbar.classList.remove('active');
+            menuIcon.classList.remove('bx-x');
+        });
+    });
+
+    // Show/hide back-to-top button
+    const topButton = document.querySelector('.top');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+            topButton.classList.add('show');
+        } else {
+            topButton.classList.remove('show');
+        }
+    });
+
+    // Animate elements on scroll
+    const animateOnScroll = () => {
+        const elements = document.querySelectorAll('.about-item, .services-box, .row');
+        elements.forEach(element => {
+            const rect = element.getBoundingClientRect();
+            if (rect.top <= window.innerHeight * 0.8) {
+                element.style.opacity = '1';
+                element.style.transform = 'translateY(0)';
+            }
+        });
+    };
+    window.addEventListener('scroll', animateOnScroll);
+    animateOnScroll(); // Initial check
+
+    // Contact form submission
+    const contactForm = document.getElementById('contact-form');
+    contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const formData = new FormData(contactForm);
+        const name = formData.get('name').trim();
+        const email = formData.get('email').trim();
+        const subject = formData.get('subject').trim();
+        const message = formData.get('message').trim();
+
+        // Enhanced client-side validation
+        if (!name || name.length < 2) {
+            alert('Please enter a valid name (at least 2 characters).');
+            return;
+        }
+        if (!email || !/^\S+@\S+\.\S+$/.test(email)) {
+            alert('Please enter a valid email address.');
+            return;
+        }
+        if (!message || message.length < 10) {
+            alert('Please enter a message (at least 10 characters).');
+            return;
+        }
+
+        // Simulate form submission
+        console.log('Form submitted:', { name, email, subject, message });
+        alert('Thank you for your message! I will get back to you soon.');
+        contactForm.reset();
+    });
+});
+    </script>
+</body>
+</html>
